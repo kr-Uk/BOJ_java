@@ -30,3 +30,10 @@ while(sc.hasNextLine()) {
   System.out.println(a+b);
 }
 ```
+
+## 타입 변환
+
+### 12345 -> 1+2+3+4+5
+```
+result += s.charAt(i)-'0';
+```
