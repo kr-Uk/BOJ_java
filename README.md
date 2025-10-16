@@ -17,3 +17,16 @@ bw.write(String.valueOf(arr[0] + arr[1]));
 bw.flush();
 bw.close();
 ```
+
+### 읽을 줄이 있을 때까지 입력받기
+```
+Scanner sc = new Scanner(System.in);
+
+while(sc.hasNextLine()) {
+  StringTokenizer st = new StringTokenizer(sc.nextLine());
+  int a = Integer.parseInt(st.nextToken());
+  int b = Integer.parseInt(st.nextToken());
+  
+  System.out.println(a+b);
+}
+```
