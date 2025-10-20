@@ -11,12 +11,12 @@ import java.util.StringTokenizer;
 
 public class _2798{
     public static void main(String[] args) throws IOException {
-        Solution s = new Solution();
+        Solution2798 s = new Solution2798();
         s.solve();
     }
 }
 
-class Solution{
+class Solution2798{
 
     public static int anw = 0;
 
@@ -28,7 +28,7 @@ class Solution{
         int m = Integer.parseInt(st.nextToken());
 
         int[] arr = new int[n];
-        Deque<Integer> stack = new ArrayDeque<>();
+        Deque<Integer> stack = new ArrayDeque<Integer>();
 
         st = new StringTokenizer(br.readLine());
 

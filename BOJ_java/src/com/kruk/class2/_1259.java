@@ -6,14 +6,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main{
+public class _1259{
     public static void main(String[] args) throws IOException {
-        Solution s = new Solution();
+        Solution1259 s = new Solution1259();
         s.solve();
     }
 }
 
-class Solution{
+class Solution1259{
 
     public static int anw = 0;
 
