@@ -68,3 +68,95 @@ String[] newArr = new String[n];
 
 for (String s : stringHashSet) newArr[idx++] = s;
 ```
+
+## 리스트
+
+### Collections.sort
+
+- 리스트가 String 타입이면 그냥 따로 override 안해도 돼.
+  String 클래스는 Comparable 인터페이스를 사전편찬 순으로 정렬되도록 구현하고 있기 때문임.
+  근데 따로 클래스를 만든 오브젝트면?! 구현을 해줘야 알지 !
+  그래서 Comparable<>을 implements하고, override로 compareTo 구현.
+  
+```
+int n = Integer.parseInt(br.readLine());
+List<Coor> c = new ArrayList<Coor>();
+
+StringTokenizer st;
+for (int i=0; i<n; i++) {
+  st = new StringTokenizer(br.readLine());
+  int x = Integer.parseInt(st.nextToken());
+  int y = Integer.parseInt(st.nextToken());
+  c.add(new Coor(x, y));
+}
+
+Collections.sort(c);
+
+...
+
+class Coor implements Comparable<Coor>{
+  int x;
+  int y;
+  
+  public Coor(int x, int y) {
+    super();
+    this.x = x;
+    this.y = y;
+  }
+  
+  public int compareTo(Coor c) {
+    if(this.x > c.x ||
+    (this.x == c.x && this.y > c.y)) {
+      return 1;
+    } else return -1;
+  }
+}
+```
+
+- 만약 사용자 정의대로 정렬하고 싶다면?! => Comparator
+```
+class nameSort implements Comparator<Person>{
+  @Override
+  public int compare(Person p1, Person p2){
+    return p1.name.length() > p2.name.length() ? 1
+            : p1.name.length() < p2.name.length() ? -1 : 0;
+  }
+
+  Collections.sort(names, new nameSort());
+}
+```
+
+## Set
+
+### 원소가 포함?
+```
+Set<Integer> s = new HashSet<Integer>();
+s.contains(arr[i]);
+```
+
+## 맵
+key - value 쌍으로 저장
+
+### TreeMap
+key값으로 정렬하려고 사용했음.
+```
+int n = Integer.parseInt(br.readLine());
+Map<Integer, List<String>> map = new TreeMap<Integer, List<String>>();
+
+StringTokenizer st;
+for (int i=0; i<n; i++) {
+  st = new StringTokenizer(br.readLine());
+  int key = Integer.parseInt(st.nextToken());
+  String value = st.nextToken();
+  if (!map.containsKey(key)) map.put(key, new ArrayList<String>());
+  map.get(key).add(value);
+}
+
+for (Integer key : map.keySet()) {
+  for (String s : map.get(key)) {
+    bw.write(String.valueOf(key) + " " + s);
+    bw.newLine();
+  }
+}
+```
+
