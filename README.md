@@ -71,6 +71,14 @@ for (String s : stringHashSet) newArr[idx++] = s;
 
 ## 리스트
 
+### 큐
+```
+Queue<Integer> q = new LinkedList<Integer>();
+q.remove();
+q.add(1);
+q.element();
+```
+
 ### Collections.sort
 
 - 리스트가 String 타입이면 그냥 따로 override 안해도 돼.
@@ -126,6 +134,13 @@ class nameSort implements Comparator<Person>{
 }
 ```
 
+## Stack
+```
+Stack<Character> c = new Stack<Character>();
+c.push('a');
+c.pop();
+```
+
 ## Set
 
 ### 원소가 포함?
@@ -136,6 +151,14 @@ s.contains(arr[i]);
 
 ## 맵
 key - value 쌍으로 저장
+
+### HashMap
+```
+Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+if (map.containsKey(temp)) map.replace(temp, map.get(temp)+1);
+else map.put(temp, 1);
+// replace 대신 그냥 put으로 값을 덮어씌울 수 있다.
+```
 
 ### TreeMap
 key값으로 정렬하려고 사용했음.
@@ -159,4 +182,5 @@ for (Integer key : map.keySet()) {
   }
 }
 ```
+
 
