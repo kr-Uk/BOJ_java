@@ -77,6 +77,10 @@ Queue<Integer> q = new LinkedList<Integer>();
 q.remove();
 q.add(1);
 q.element();
+
+Deque<Integer> dq = new ArrayDeque<Integer>();
+dq.peek() // 앞에 값 갖고오기
+dq.peekLast() // 뒤에 값 갖고오
 ```
 
 ### Collections.sort
@@ -182,5 +186,6 @@ for (Integer key : map.keySet()) {
   }
 }
 ```
+
 
 
