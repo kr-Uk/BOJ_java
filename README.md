@@ -153,6 +153,13 @@ Set<Integer> s = new HashSet<Integer>();
 s.contains(arr[i]);
 ```
 
+### 교집합, 합집합, 차집합
+```
+s1.retainAll(s2);
+s1.addAll(s2);
+s1.removeAll(s2);
+```
+
 ## 맵
 key - value 쌍으로 저장
 
@@ -186,6 +193,7 @@ for (Integer key : map.keySet()) {
   }
 }
 ```
+
 
 
 
