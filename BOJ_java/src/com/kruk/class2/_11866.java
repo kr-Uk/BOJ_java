@@ -27,7 +27,7 @@ class Solution11866{
 		int n = Integer.parseInt(st.nextToken());
 		int k = Integer.parseInt(st.nextToken());
 		
-		List<Integer> list = new ArrayList<>();
+		List<Integer> list = new ArrayList<Integer>();
 		
 		for (int i=1; i<=n; i++) list.add(i);
 		

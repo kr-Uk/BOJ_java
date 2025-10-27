@@ -35,35 +35,28 @@ class Solution10845 {
 			st = new StringTokenizer(br.readLine());
 			String command = st.nextToken();
 
-			switch (command) {
-			case "push":
-				Push(queue, Integer.parseInt(st.nextToken()));
-				break;
-			case "pop":
-				bw.write(String.valueOf(Pop(queue)));
-				bw.newLine();
-				break;
-			case "size":
-				bw.write(String.valueOf(Size(queue)));
-				bw.newLine();
-				break;
-			case "empty":
-				bw.write(String.valueOf(Empty(queue)));
-				bw.newLine();
-				break;
-			case "front":
-				bw.write(String.valueOf(Front(queue)));
-				bw.newLine();
-				break;
-			case "back":
-				bw.write(String.valueOf(Back(queue)));
-				bw.newLine();
-				break;
-			default:
-				bw.write("ìž…ë ¥ ì˜¤ë¥˜");
-				bw.newLine();
-				break;
+			if (command.equals("push")) {
+			    Push(queue, Integer.parseInt(st.nextToken()));
+			} else if (command.equals("pop")) {
+			    bw.write(String.valueOf(Pop(queue)));
+			    bw.newLine();
+			} else if (command.equals("size")) {
+			    bw.write(String.valueOf(Size(queue)));
+			    bw.newLine();
+			} else if (command.equals("empty")) {
+			    bw.write(String.valueOf(Empty(queue)));
+			    bw.newLine();
+			} else if (command.equals("front")) {
+			    bw.write(String.valueOf(Front(queue)));
+			    bw.newLine();
+			} else if (command.equals("back")) {
+			    bw.write(String.valueOf(Back(queue)));
+			    bw.newLine();
+			} else {
+			    bw.write("Ä¿¸àµå ¿À·ù");
+			    bw.newLine();
 			}
+
 		}
 		bw.flush();
 		bw.close();

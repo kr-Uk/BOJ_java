@@ -31,31 +31,25 @@ class Solution10828 {
 			st = new StringTokenizer(br.readLine());
 			String command = st.nextToken();
 
-			switch (command) {
-			case "push":
-				Push(stack, Integer.parseInt(st.nextToken()));
-				break;
-			case "pop":
-				bw.write(String.valueOf(Pop(stack)));
-				bw.newLine();
-				break;
-			case "size":
-				bw.write(String.valueOf(Size(stack)));
-				bw.newLine();
-				break;
-			case "empty":
-				bw.write(String.valueOf(Empty(stack)));
-				bw.newLine();
-				break;
-			case "top":
-				bw.write(String.valueOf(Top(stack)));
-				bw.newLine();
-				break;
-			default:
-				bw.write("입력 오류");
-				bw.newLine();
-				break;
+			if (command.equals("push")) {
+			    Push(stack, Integer.parseInt(st.nextToken()));
+			} else if (command.equals("pop")) {
+			    bw.write(String.valueOf(Pop(stack)));
+			    bw.newLine();
+			} else if (command.equals("size")) {
+			    bw.write(String.valueOf(Size(stack)));
+			    bw.newLine();
+			} else if (command.equals("empty")) {
+			    bw.write(String.valueOf(Empty(stack)));
+			    bw.newLine();
+			} else if (command.equals("top")) {
+			    bw.write(String.valueOf(Top(stack)));
+			    bw.newLine();
+			} else {
+			    bw.write("�ȵ�");
+			    bw.newLine();
 			}
+
 		}
 		bw.flush();
 		bw.close();
