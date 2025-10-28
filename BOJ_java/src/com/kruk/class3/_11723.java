@@ -1,4 +1,4 @@
-package com.kruk.class2;
+package com.kruk.class3;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

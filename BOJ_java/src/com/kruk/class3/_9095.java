@@ -1,21 +1,19 @@
-package com.kruk.class2;
+package com.kruk.class3;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
-import java.util.StringTokenizer;
 
-public class _11399{
+public class _9095{
     public static void main(String[] args) throws IOException {
-        Solution11399 s = new Solution11399();
+        Solution9095 s = new Solution9095();
         s.solve();
     }
 }
 
-class Solution11399{
+class Solution9095{
 	
     void solve() throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,23 +21,21 @@ class Solution11399{
         
         int n = Integer.parseInt(br.readLine());
         
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        int[] arr = new int[12];
         
-        int[] arr = new int[n];
+        arr[1] = 1;
+        arr[2] = 2;
+        arr[3] = 4;
         
-        for(int i=0; i<n; i++) arr[i] = Integer.parseInt(st.nextToken());
-        
-        Arrays.sort(arr);
-        
-        int result = 0;
-        int sum = 0;
-        
-        for(int i=0; i<n; i++) {
-        	sum += arr[i];
-        	result += sum;
+        for(int i=4; i<=11; i++) {
+        	arr[i] = arr[i-3] + arr[i-2] + arr[i-1];
         }
         
-        bw.write(String.valueOf(result));
+        for(int i=0; i<n; i++) {
+        	bw.write(String.valueOf(arr[Integer.parseInt(br.readLine())]));
+        	bw.newLine();
+        }
+        
         bw.flush();
         bw.close();
     }
