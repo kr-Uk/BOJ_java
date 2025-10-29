@@ -41,7 +41,6 @@ class Solution9012{
         	else bw.write("NO");
         	bw.newLine();
         	
-        	
         }
         
         bw.flush();
