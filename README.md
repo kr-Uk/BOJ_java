@@ -1,6 +1,7 @@
 ﻿# 자바 문법 정리
 
-## 입출력
+<details>
+<summary>## 입출력</summary>
 
 ### 입력받기 (BufferdReader, StringTokenizer)
 ```
@@ -30,6 +31,7 @@ while(sc.hasNextLine()) {
   System.out.println(a+b);
 }
 ```
+<\details>
 
 ## 타입 변환
 
@@ -193,6 +195,7 @@ for (Integer key : map.keySet()) {
   }
 }
 ```
+
 
 
 
