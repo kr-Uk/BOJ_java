@@ -1,35 +1,40 @@
-﻿# 자바 문법 정리
+﻿# 자바줘!
 
-## 입출력
+<details>
+<summary> <h2>자바 문법 정리</h2> </summary>
 
-### 입력받기 (BufferdReader, StringTokenizer)
-```
-BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-StringTokenizer st = new StringTokenizer(br.readLine());
-int[] arr = new int[2];
-for(int i=0; i<2; i++) arr[i] = Integer.parseInt(st.nextToken());
-```
-
-### 출력하기 (BufferedWriter)
-```
-BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-bw.write(String.valueOf(arr[0] + arr[1]));
-bw.flush();
-bw.close();
-```
-
-### 읽을 줄이 있을 때까지 입력받기
-```
-Scanner sc = new Scanner(System.in);
-
-while(sc.hasNextLine()) {
-  StringTokenizer st = new StringTokenizer(sc.nextLine());
-  int a = Integer.parseInt(st.nextToken());
-  int b = Integer.parseInt(st.nextToken());
+  <details>
+  <summary> <h2>입출력</h2> </summary>
+  ### 입력받기 (BufferdReader, StringTokenizer)
+  ```
+  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+  StringTokenizer st = new StringTokenizer(br.readLine());
+  int[] arr = new int[2];
+  for(int i=0; i<2; i++) arr[i] = Integer.parseInt(st.nextToken());
+  ```
   
-  System.out.println(a+b);
-}
-```
+  ### 출력하기 (BufferedWriter)
+  ```
+  BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+  bw.write(String.valueOf(arr[0] + arr[1]));
+  bw.flush();
+  bw.close();
+  ```
+  
+  ### 읽을 줄이 있을 때까지 입력받기
+  ```
+  Scanner sc = new Scanner(System.in);
+  
+  while(sc.hasNextLine()) {
+    StringTokenizer st = new StringTokenizer(sc.nextLine());
+    int a = Integer.parseInt(st.nextToken());
+    int b = Integer.parseInt(st.nextToken());
+    
+    System.out.println(a+b);
+  }
+  ```
+  </details>
+</details>
 
 ## 타입 변환
 
@@ -193,6 +198,9 @@ for (Integer key : map.keySet()) {
   }
 }
 ```
+
+
+
 
 
 
