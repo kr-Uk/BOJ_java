@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class _1697{
@@ -26,31 +28,33 @@ class Solution1697{
         
         if (k <= n) {
         	bw.write(String.valueOf(n-k));
+        	bw.flush();
+        	return;
         } else {
-        	int[] dp = new int[k+1];
-            
-            int cnt = 0;
-            for (int i=n; i<=k; i++) {
-            	dp[i] = cnt;
-            	cnt++;
-            }
-            
-            cnt = 0;
-            
-            for (int i=n; i>=0; i--) {
-            	dp[i] = cnt;
-            	cnt++;
-            }
-            
-            for(int i=n+1; i<=k; i++) {
-            	dp[i] = Math.min(dp[i], dp[i-1]+1);
-            	if (i%2 == 0) dp[i] = Math.min(dp[i], dp[i/2]+1);
-            }
-            
-            bw.write(String.valueOf(dp[k]));
+        	int[] visited = new int[100001];
+        	
+        	Queue<Integer> q = new LinkedList<Integer>();
+        	q.add(n);
+        	visited[n] = 1;
+        	
+        	while(!q.isEmpty()) {
+        		int curr = q.poll();
+        		
+        		if (curr == k) {
+        			bw.write(String.valueOf(visited[curr]-1));
+        			bw.flush();
+        			return;
+        		}
+        		
+        		int[] next = {curr-1, curr+1, curr*2};
+        		for(int nx : next) {
+        			if (nx >= 0 && nx <= 100000 && visited[nx] == 0) {
+        				visited[nx] = visited[curr]+ 1;
+        				q.add(nx);
+        			}
+        		}
+        	}
         }
         
-        bw.flush();
-        bw.close();
     }
 }
