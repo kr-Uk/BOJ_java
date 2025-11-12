@@ -20,6 +20,7 @@ public class _14940{
 class Solution14940{
 	
 	static int[][] graph;
+	static int[][] visited;
 	static int[] dx = new int[] {1, -1, 0, 0};
 	static int[] dy = new int[] {0, 0, 1, -1};
 	
@@ -33,6 +34,7 @@ class Solution14940{
         int m = Integer.parseInt(st.nextToken());
         
         graph = new int[n][m];
+        visited = new int[n][m];
         
         int start_x = 0;
         int start_y = 0;
@@ -52,7 +54,12 @@ class Solution14940{
         
         for(int i=0; i<n; i++) {
         	for (int j=0; j<m; j++) {
-        		bw.write(String.valueOf(graph[i][j]) + " ");
+        		if(graph[i][j] == 1 && visited[i][j] == 0) {
+        			bw.write(String.valueOf(-1) + " ");
+        		} else {
+        			bw.write(String.valueOf(graph[i][j]) + " ");
+        		}
+        		
         	}
         	bw.newLine();
         }
@@ -72,20 +79,14 @@ class Solution14940{
 				int _x = coor[0] + dx[i];
 				int _y = coor[1] + dy[i];
 				if (_x >= 0 && _x < m && _y >= 0 && _y < n){
-					if ((graph[_y][_x] == 1 || graph[_y][_x] > graph[coor[1]][coor[0]]+1)
+					if (((graph[_y][_x] == 1 && visited[_y][_x] == 0)
+							|| graph[_y][_x] > graph[coor[1]][coor[0]]+1)
 							&& graph[_y][_x] != 0) {
 						q.add(new int[] {_x, _y});
+						visited[_y][_x] = 1;
 						graph[_y][_x] = graph[coor[1]][coor[0]] + 1;
 					}
 				}
-			}
-		}
-		
-		for (int i=0; i<4; i++) {
-			int _x = x + dx[i];
-			int _y = y + dy[i];
-			if (_x >= 0 && _x < m && _y >= 0 && _y < n){
-				graph[_y][_x] = 1;
 			}
 		}
 	}
